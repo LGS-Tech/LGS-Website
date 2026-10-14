@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
 import { Logo } from '../ui/Logo';
+import { SENTINEL_APP_URL } from '../../lib/appUrl';
 
 const NAV_LINKS = [
   { label: 'Dashboard', href: '#dashboard' },
@@ -42,7 +43,10 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <Button href={SENTINEL_APP_URL} size="md" variant="outline">
+            Open app
+          </Button>
           <Button href="#cta" size="md">
             Request a Demo
           </Button>
@@ -81,6 +85,15 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
+              <Button
+                href={SENTINEL_APP_URL}
+                size="md"
+                variant="outline"
+                className="mt-2 w-full"
+                onClick={() => setIsOpen(false)}
+              >
+                Open app
+              </Button>
               <Button
                 href="#cta"
                 size="md"

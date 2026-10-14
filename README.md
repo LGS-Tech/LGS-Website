@@ -1,5 +1,13 @@
 # LGS website
 
+Host this landing page on GitHub Pages: https://lgs-tech.github.io/LGS-Website/
+
+**Get Started** and **Open app** open the Sentinel Beacon app at
+https://lgs-tech.github.io/sentinel-beacon-app/
+
+After the first push to `main`, an org admin enables Pages once:
+Settings → Pages → Source: GitHub Actions.
+
 Pricing is a 30-day free trial of the organisation's map, followed by GBP 100
 per month including 5 seats, plus GBP 15 per additional seat per month.
 The pricing configuration lives in [src/data/pricing.ts](src/data/pricing.ts).

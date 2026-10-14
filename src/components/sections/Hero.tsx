@@ -11,6 +11,7 @@ import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
 import { LiveBadge } from '../ui/LiveBadge';
 import { dashboardStats, incidents } from '../../data/incidents';
+import { SENTINEL_APP_URL } from '../../lib/appUrl';
 
 const previewIncidents = [incidents[1], incidents[2]];
 
@@ -41,7 +42,7 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button
-              href="#pricing"
+              href={SENTINEL_APP_URL}
               size="lg"
               icon={<ArrowRight className="size-4" aria-hidden="true" />}
             >
