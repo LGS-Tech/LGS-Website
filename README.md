@@ -1,20 +1,21 @@
 # LGS website
 
-Host this landing page on GitHub Pages: https://lgs-tech.github.io/LGS-Website/
+Host this landing page for free on GitHub Pages:
 
-**Get Started** and **Open app** open the Sentinel Beacon app at
-https://lgs-tech.github.io/sentinel-beacon-app/
+https://lgs-tech.github.io/LGS-Website/
 
-After the first push to `main`, an org admin enables Pages once:
-Settings → Pages → Source: GitHub Actions.
+**Sign in** and **Get Started** open the app that is already live at
+https://lgstech.co. No new domain, DNS change, or paid host is required.
+Visiting the app does not sign anyone in.
+
+A demo request emails `info@lgstech.co` through FormSubmit. It does not create
+an account or start a trial. `info@lgstech.co` must open the first FormSubmit
+activation email before later requests are delivered.
 
 Pricing is a 30-day free trial of the organisation's map, followed by GBP 100
 per month including 5 seats, plus GBP 15 per additional seat per month.
 The pricing configuration lives in [src/data/pricing.ts](src/data/pricing.ts).
-
-The Request a Demo form is a frontend-only prototype; it does not send requests
-or start a trial. See [the backend handoff](BACKEND-HANDOFF.md) for the proposed
-integration contract, billing requirements and open product decisions.
+Requesting a demo does not start that trial.
 
 ## React + TypeScript + Vite
 

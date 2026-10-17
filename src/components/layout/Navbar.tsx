@@ -45,7 +45,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Button href={SENTINEL_APP_URL} size="md" variant="outline">
-            Open app
+            Sign in
           </Button>
           <Button href="#cta" size="md">
             Request a Demo
@@ -92,7 +92,7 @@ export function Navbar() {
                 className="mt-2 w-full"
                 onClick={() => setIsOpen(false)}
               >
-                Open app
+                Sign in
               </Button>
               <Button
                 href="#cta"
