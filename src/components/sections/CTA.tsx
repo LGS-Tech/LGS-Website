@@ -1,5 +1,6 @@
 import { CheckCircle2, Send } from 'lucide-react';
 import { type FormEvent, useState } from 'react';
+import { sendDemoRequest } from '../../lib/demoRequest';
 import { Reveal } from '../animations/Reveal';
 import { Container } from '../ui/Container';
 
@@ -14,13 +15,15 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const initialState: FormState = { name: '', email: '', organisation: '' };
 
 /**
- * Demo-request form. This is a marketing prototype with no backend, so
- * submissions are validated client-side only and never leave the browser.
+ * Demo-request form. A valid submission is emailed to info@lgstech.co.
+ * It does not create an account or start a trial.
  */
 export function CTA() {
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<FormState>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   function validate(values: FormState) {
     const nextErrors: Partial<FormState> = {};
@@ -35,12 +38,23 @@ export function CTA() {
     return nextErrors;
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validate(form);
     setErrors(nextErrors);
-    if (Object.keys(nextErrors).length === 0) {
+    setSubmitError('');
+    if (Object.keys(nextErrors).length > 0 || sending) return;
+
+    setSending(true);
+    try {
+      await sendDemoRequest(form);
       setSubmitted(true);
+    } catch {
+      setSubmitError(
+        'We could not send that request. Email info@lgstech.co and we will arrange the demo.',
+      );
+    } finally {
+      setSending(false);
     }
   }
 
@@ -74,12 +88,11 @@ export function CTA() {
                       aria-hidden="true"
                     />
                     <p className="mt-4 text-lg font-semibold text-ink-900">
-                      Demo form preview complete
+                      Demo request sent
                     </p>
                     <p className="mt-2 text-sm text-ink-500">
-                      This is a design prototype with no backend, so nothing was
-                      actually sent. In production this form would route to our
-                      sales team.
+                      The LGS team will reply at the email you entered. This
+                      does not create an account or start a trial.
                     </p>
                   </div>
                 ) : (
@@ -183,13 +196,20 @@ export function CTA() {
 
                     <button
                       type="submit"
-                      className="flex w-full items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-700"
+                      disabled={sending}
+                      className="flex w-full items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-60"
                     >
-                      Request a Demo
+                      {sending ? 'Sending…' : 'Request a Demo'}
                       <Send className="size-4" aria-hidden="true" />
                     </button>
+                    {submitError && (
+                      <p role="alert" className="text-center text-xs text-brand-600">
+                        {submitError}
+                      </p>
+                    )}
                     <p className="text-center text-xs text-ink-300">
-                      Prototype form — submissions are not sent anywhere.
+                      This emails the LGS team. It does not create an account or
+                      start a trial.
                     </p>
                   </form>
                 )}

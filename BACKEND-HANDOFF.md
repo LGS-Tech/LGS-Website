@@ -16,9 +16,12 @@ before launch.
 ## 1. Request a Demo
 
 All demo buttons, including the pricing button, lead to the form in
-`src/components/sections/CTA.tsx`. It collects **name, work email and organisation**.
-At present it validates locally and displays an explicit prototype message;
-it does not send, save or email anything.
+`src/components/sections/CTA.tsx`. It collects **name, work email and organisation**
+and emails that enquiry to **info@lgstech.co**. It does not create an account
+or start a trial.
+
+The inbox must confirm FormSubmit's first activation email. Until that
+confirmation, FormSubmit accepts the form but the message does not arrive.
 
 Suggested integration contract (proposal, not an existing endpoint):
 
