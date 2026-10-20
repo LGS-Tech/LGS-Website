@@ -1,12 +1,12 @@
 # LGS website
 
-Host this landing page for free on GitHub Pages:
+The landing page is https://lgstech.co. **Sign in** and **Get Started** open
+https://app.lgstech.co. Visiting the app does not sign anyone in.
 
-https://lgs-tech.github.io/LGS-Website/
-
-**Sign in** and **Get Started** open the app that is already live at
-https://lgstech.co. No new domain, DNS change, or paid host is required.
-Visiting the app does not sign anyone in.
+`app.lgstech.co` is a free DNS record on the domain you already own. In
+Bluehost, add a CNAME named `app` pointing at `lgs-tech.github.io`. Do not buy
+hosting. Publish the app repo before this site, or `lgstech.co` will be blank
+until both deploys finish.
 
 A demo request emails `info@lgstech.co` through FormSubmit. It does not create
 an account or start a trial. `info@lgstech.co` must open the first FormSubmit

@@ -1,2 +1,2 @@
-/** Live Sentinel Beacon web app. Already hosted for free. Sign in still requires an account. */
-export const SENTINEL_APP_URL = "https://lgstech.co";
+/** Live Sentinel Beacon web app. Sign in opens this host and still requires an account. */
+export const SENTINEL_APP_URL = "https://app.lgstech.co";
