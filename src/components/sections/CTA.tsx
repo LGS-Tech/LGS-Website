@@ -69,7 +69,7 @@ export function CTA() {
                   Request a Demo
                 </p>
                 <h2 className="mt-3 text-3xl text-white sm:text-4xl">
-                  See LGS protecting your campus, live.
+                  See LGS protecting your organisation, live.
                 </h2>
                 <p className="mt-4 text-base text-white/70">
                   Tell us a little about your organisation and our team will

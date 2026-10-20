@@ -30,14 +30,13 @@ export function Hero() {
         <Reveal>
           <p className="mb-5 inline-flex items-center gap-2 text-xs font-bold tracking-[0.12em] text-brand-600 uppercase">
             <Sparkles className="size-3.5" aria-hidden="true" />
-            AI-Powered Campus Safety Platform
+            Safety coordination for staff and responders
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl">
             Be Prepared. <span className="text-brand-600">Stay Protected.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink-500">
-            Stay informed, find the safest route, and get the help you need
-            during an emergency.
+            Stay informed and get the help you need during an emergency.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">

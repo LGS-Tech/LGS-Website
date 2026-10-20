@@ -6,7 +6,7 @@ export function Features() {
   return (
     <section id="features" className="py-16 sm:py-20">
       <Container>
-        <div className="grid gap-8 rounded-3xl border border-border bg-surface p-8 shadow-card sm:grid-cols-2 sm:p-10 lg:grid-cols-4">
+        <div className="grid gap-8 rounded-3xl border border-border bg-surface p-8 shadow-card sm:grid-cols-2 sm:p-10 lg:grid-cols-3">
           {features.map((feature, index) => (
             <Reveal
               key={feature.title}
@@ -19,6 +19,11 @@ export function Features() {
               <div>
                 <h3 className="text-base font-semibold text-ink-900">
                   {feature.title}
+                  {feature.comingSoon && (
+                    <span className="ml-2 align-middle text-[11px] font-semibold tracking-wide text-brand-600 uppercase">
+                      Coming soon
+                    </span>
+                  )}
                 </h3>
                 <p className="mt-1 text-sm text-ink-500">
                   {feature.description}
