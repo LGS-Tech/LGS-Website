@@ -96,10 +96,10 @@ export function Footer() {
           <div>
             <p className="font-semibold text-ink-900">Get in touch</p>
             <a
-              href="mailto:hello@lgs.tech"
+              href="mailto:info@lgstech.co"
               className="text-sm text-ink-500 hover:text-ink-900"
             >
-              hello@lgs.tech
+              info@lgstech.co
             </a>
           </div>
 

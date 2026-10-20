@@ -13,7 +13,6 @@ import { Counter } from '../animations/Counter';
 import { Reveal } from '../animations/Reveal';
 import { Button } from '../ui/Button';
 import { Container } from '../ui/Container';
-import { LiveBadge } from '../ui/LiveBadge';
 
 const insightCards = [
   {
@@ -43,15 +42,14 @@ export function AIInsights() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <p className="mb-4 inline-flex items-center gap-2 text-xs font-bold tracking-[0.12em] text-brand-600 uppercase">
-              AI-Powered Campus Safety Platform
+              Coming soon
             </p>
             <h2 className="text-3xl sm:text-4xl">
               Safety, powered by intelligence
             </h2>
             <p className="mt-5 text-lg text-ink-500">
-              LGS continuously learns from your safety and maintenance data to
-              detect recurring problems, predict failures, and uncover the true
-              cost behind every issue.
+              Pattern detection, failure prediction, and cost attribution are
+              planned. They are not part of the product yet.
             </p>
             <div className="mt-8">
               <Button
@@ -106,7 +104,9 @@ function AIInsightsPanel() {
           <Radio className="size-4" aria-hidden="true" />
           AI-Intelligence
         </span>
-        <LiveBadge />
+        <span className="text-xs font-semibold tracking-wide text-brand-600 uppercase">
+          Coming soon
+        </span>
       </div>
 
       <div className="mt-5 border-t border-border pt-5">
