@@ -74,8 +74,8 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-3 max-w-xs text-sm text-ink-500">
-              Real-time emergency response and safety coordination for your
-              organization.
+              Live operational visibility and coordination for your
+              organisation.
             </p>
           </div>
 

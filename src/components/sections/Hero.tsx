@@ -30,13 +30,14 @@ export function Hero() {
         <Reveal>
           <p className="mb-5 inline-flex items-center gap-2 text-xs font-bold tracking-[0.12em] text-brand-600 uppercase">
             <Sparkles className="size-3.5" aria-hidden="true" />
-            Safety coordination for staff and responders
+            Live coordination for staff and responders
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl">
-            Be Prepared. <span className="text-brand-600">Stay Protected.</span>
+            Complex problems.{' '}
+            <span className="text-brand-600">Made simple</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink-500">
-            Stay informed and get the help you need during an emergency.
+            Stay informed live — see every case clearly, the moment it matters.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -99,40 +100,48 @@ function HeroDashboardPreview() {
         </span>
       </div>
 
-      <div className="relative my-5 h-40 overflow-hidden rounded-2xl bg-surface-subtle">
-        <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
-          <defs>
-            <pattern
-              id="grid"
-              width="24"
-              height="24"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 24 0 L 0 0 0 24"
-                fill="none"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+      <div className="relative my-5 h-48 overflow-hidden rounded-2xl bg-surface-subtle sm:h-56">
+        <img
+          src="/demo-map.png"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-90"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-ink-900/35 via-transparent to-ink-900/10"
+        />
+
         <MapPin
-          className="absolute top-6 left-10 size-5 animate-float text-brand-600"
+          className="absolute top-[22%] left-[18%] size-5 animate-float text-brand-600 drop-shadow"
           style={{ animationDelay: '0s' }}
           aria-hidden="true"
         />
         <MapPin
-          className="absolute top-16 right-14 size-5 animate-float text-sky-600"
+          className="absolute top-[40%] right-[22%] size-5 animate-float text-sky-600 drop-shadow"
           style={{ animationDelay: '0.8s' }}
           aria-hidden="true"
         />
-        <MapPin
-          className="absolute bottom-6 left-1/2 size-5 -translate-x-1/2 animate-float text-success-500"
-          style={{ animationDelay: '1.6s' }}
-          aria-hidden="true"
-        />
+
+        <div className="absolute bottom-[18%] left-1/2 z-10 -translate-x-1/2">
+          <div className="relative flex flex-col items-center">
+            <div className="mb-1 max-w-[11rem] rounded-2xl border border-border bg-surface px-3 py-2 shadow-card animate-float">
+              <p className="text-[11px] font-semibold text-ink-900">
+                {previewIncidents[0]?.category ?? 'Injury'} · LIVE
+              </p>
+              <p className="text-[10px] text-ink-500">
+                {previewIncidents[0]?.title ?? 'Major Injury'}
+              </p>
+            </div>
+            <span
+              aria-hidden="true"
+              className="h-0 w-0 border-x-[6px] border-t-[8px] border-x-transparent border-t-surface drop-shadow"
+            />
+            <MapPin
+              className="mt-0.5 size-5 text-success-500 drop-shadow"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="space-y-3">

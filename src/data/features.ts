@@ -11,8 +11,9 @@ export interface Feature {
 export const features: Feature[] = [
   {
     icon: Sparkles,
-    title: 'AI-Powered Safety',
-    description: 'Smart alerts and predictions to keep your organisation safe',
+    title: 'AI-Powered Trends',
+    description:
+      'Smart alerts and predictions for operational patterns across your organisation',
     comingSoon: true,
   },
   {
