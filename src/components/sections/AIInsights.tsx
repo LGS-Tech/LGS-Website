@@ -45,7 +45,7 @@ export function AIInsights() {
               Coming soon
             </p>
             <h2 className="text-3xl sm:text-4xl">
-              Safety, powered by intelligence
+              Trends, powered by intelligence
             </h2>
             <p className="mt-5 text-lg text-ink-500">
               Pattern detection, failure prediction, and cost attribution are
